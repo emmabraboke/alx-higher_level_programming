@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
-    if type(roman_string) != str:
-        return None
+    if type(roman_string) != str or roman_string is None:
+        return 0
     conv_table = {
         "I": 1, "II": 2, "III": 3, "IV": 4,
         "V": 5, "VI": 6, "VII": 7, "VIII": 8,
