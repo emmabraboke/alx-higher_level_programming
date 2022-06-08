@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
-    if type(roman_string) != str or roman_string is None:
-        return 0
     conv_table = {
         "I": 1, "II": 2, "III": 3, "IV": 4,
         "V": 5, "VI": 6, "VII": 7, "VIII": 8,
@@ -12,8 +10,12 @@ def roman_to_int(roman_string):
         "DCC": 700, "DCCC": 800, "CM": 900, "M": 1000,
         "MM": 2000, "MMM": 3000
     }
+
     result = 0
-    for i in roman_string.upper():
-        if i in conv_table:
-            result += conv_table[i]
+    if type(roman_string) != str or roman_string is None:
+        return 0
+    else:
+        for i in roman_string.upper():
+            if i in conv_table:
+                result += conv_table[i]
     return result
