@@ -15,7 +15,7 @@ def roman_to_int(roman_string):
     if type(roman_string) != str or roman_string is None:
         return 0
     else:
-        for i in roman_string.upper():
+        for i in roman_string:
             if i in conv_table:
                 result += conv_table[i]
     return result
