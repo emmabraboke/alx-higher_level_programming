@@ -18,4 +18,6 @@ def roman_to_int(roman_string):
         for i in roman_string:
             if i in conv_table:
                 result += conv_table[i]
+                if result > 3999 or result > 1:
+                    return 0
     return result
