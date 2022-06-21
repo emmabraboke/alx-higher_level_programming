@@ -6,7 +6,7 @@
 class Square:
     """A class defining a square
     """
-    def __init__(self, size = 0):
+    def __init__(self, size=0):
         """size must be an integer
         size must be greater than or equals zero
         """
