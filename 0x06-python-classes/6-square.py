@@ -14,13 +14,16 @@ class Square:
             raise TypeError("size must be an integer")
         if size < 0:
             raise ValueError("size must be >= 0")
-        if type(position) == tuple and len(position) == 2:
-            x, y = position
-            is_tuple = type(position) != tuple
-            equals_two = len(position) != 2
-            x_type = type(x) != int or x < 0
-            y_type = type(y) != int or y < 0
-
+        is_tuple = type(position) != tuple
+        if not is_tuple:
+            if len(position) == 2:
+                x, y = position
+                x_type = type(x) != int or x < 0
+                y_type = type(y) != int or y < 0
+                equals_two = len(position) != 2
+            else:
+                raise TypeError("position must be a\
+                     tuple of 2 positive integers")
         if is_tuple or equals_two or x_type or y_type:
             raise TypeError("position must be a tuple of 2 positive integers")
         self.size = size
@@ -55,6 +58,7 @@ class Square:
             print("")
         if position[1] > 0:
             print("\n"*position[0])
+
         for i in range(size):
             if position[0] > 0:
                 print(" "*position[0], end="")
@@ -68,13 +72,17 @@ class Square:
 
     @position.setter
     def position(self, value):
-        if type(value) == tuple and len(value) == 2:
-            x, y = value
-            is_tuple = type(value) != tuple
-            equals_two = len(value) != 2
-            x_type = type(x) != int or x < 0
-            y_type = type(y) != int or y < 0
-
+        is_tuple = type(value) != tuple
+        if not is_tuple:
+            if len(value) == 2:
+                x, y = value
+                x_type = type(x) != int or x < 0
+                y_type = type(y) != int or y < 0
+                equals_two = len(value) != 2
+            else:
+                raise TypeError("position must be a\
+                     tuple of 2 positive integers")
         if is_tuple or equals_two or x_type or y_type:
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
+
