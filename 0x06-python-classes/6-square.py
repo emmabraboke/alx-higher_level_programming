@@ -57,7 +57,7 @@ class Square:
         if size == 0:
             print("")
         if position[1] > 0:
-            print("\n"*position[0])
+            print("\n"*(position[1]-1))
 
         for i in range(size):
             if position[0] > 0:
@@ -85,4 +85,3 @@ class Square:
         if is_tuple or equals_two or x_type or y_type:
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
-
