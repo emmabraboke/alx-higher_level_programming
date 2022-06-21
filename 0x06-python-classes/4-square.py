@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-""" A class that defines a sqaure """
+""" A class that defines a square """
 
 
 class Square:
@@ -16,11 +16,13 @@ class Square:
             raise ValueError("size must be >= 0")
         self.__size = size
 
+    """ getters """
     @property
     def size(self):
         """ returns size """
         return self.__size
 
+    """ setters """
     @size.setter
     def size(self, value):
         """ set size """
