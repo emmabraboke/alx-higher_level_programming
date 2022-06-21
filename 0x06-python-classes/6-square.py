@@ -68,10 +68,12 @@ class Square:
 
     @property
     def position(self):
+        """ set postion """
         return self.__position
 
     @position.setter
     def position(self, value):
+        """ returns position """
         is_tuple = type(value) != tuple
         if not is_tuple:
             if len(value) == 2:
